@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script src='node_modules/jquery/dist/jquery.min.js'></script>
+    <script src='build/index.js'></script>
+    <link rel="stylesheet" href="build/style.css">
+    <script src='node_modules/jquery-ui/ui/widgets/datepicker.js'></script>
+</head>
+<body>
+    <div id = 'addForm' onclick='addForm()'></div>
+    <div id="mainres"></div>
+    <div id="wrapper">
+        <div id="formwrap"><div class="selectForm">
+            <div class="del" onclick='del(this)'></div>
+            <div class="datepick">
+                <label for="from">c</label><br>
+                <input type="text" class="datapicker from"  onchange = 'refreshState(this)' name="from"/><br>
+                <label for="to">по</label><br>
+                <input type="text" class="datapicker to"  onchange = 'refreshState(this)' name="to"/>
+            </div>
+            <div id="type" class='hidden' >
+                <p>Тип номера</p>
+                <select id="chlen" onchange = 'refreshState(this)'>
+                  <option value="1">Эконом</option>
+                  <option value="2">Стандарт</option>
+                  <option value="3">Премиум</option>
+                  <option value="4">Люкс</option>
+              </select>
+          </div>
+          <div id="pplCount" class='hidden' >
+            <p>Количество человек</p>
+            <select onchange = 'refreshState(this)'>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+          </select>
+      </div>
+      <div id="roomCount" class='hidden' >
+        <p>Количество комнат</p>
+        <select id="testselect" onchange = 'refreshState(this)'>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+      </select>
+  </div>
+  <p id="test">Итого:</p>
+  <div class="result" class='hidden'></div></div></div>
+</div>
+</div>
+</body>
+</html>
